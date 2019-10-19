@@ -2,8 +2,9 @@
   <div class="progress-bar-wrapper">
     <h2>Quotes Added</h2>
     <div class="progress-bar">
-      <div class="progress-bar-filled" :style="{width: (count * 10) + '%', color: (count ? 'white' : 'black')}">
-        {{ count }} / 10
+      <div class="progress-bar-filled"
+           :style="{width: (count / maxQuotes * 100) + '%', color: (count ? 'white' : 'black')}">
+        {{ count }} / {{ maxQuotes}}
       </div>
     </div>
   </div>
@@ -12,7 +13,7 @@
 <script>
     export default {
         name: "ProgressBar",
-        props: ['count']
+        props: ['count', 'maxQuotes']
     }
 </script>
 
